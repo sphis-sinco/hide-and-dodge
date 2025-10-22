@@ -4,7 +4,7 @@ class Version
 {
 	public var version:Array<Null<Int>> = [0, 0, 0];
 
-	public function new(major:Null<Int>, ?minor:Null<Int>, ?patch:Null<Int>)
+	public function new(?major:Null<Int>, ?minor:Null<Int>, ?patch:Null<Int>)
 	{
 		this.version = [major ?? 0];
 
