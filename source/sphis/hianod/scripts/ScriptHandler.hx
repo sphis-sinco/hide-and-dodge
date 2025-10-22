@@ -14,6 +14,10 @@ class ScriptHandler
 	public static function loadScripts()
 	{
 		clearScripts();
+
+		var scriptsToLoad = ScriptedScript.listScriptClasses();
+		for (script in scriptsToLoad)
+			scripts.push(new Script(script));
 	}
 
 	public static function sendEventPacket(event_packet:EventPacket)
