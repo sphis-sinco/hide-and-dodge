@@ -5,6 +5,7 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import sphis.hianod.events_packets.EventPacket;
 import sphis.hianod.events_packets.TimeDecreaseEventPacket;
 
 class PlayState extends FlxState
@@ -90,11 +91,12 @@ class PlayState extends FlxState
 		switch (event_id)
 		{
 			case 'time_decrease':
-				var event_data = new TimeDecreaseEventPacket(this.time_starting_value, this.time_left);
-				trace(event_data);
+				var event_packet = new TimeDecreaseEventPacket(this.time_starting_value, this.time_left);
+				trace(event_packet);
 
 			default:
-				trace('Could not dispatch event={id=' + event_id + ', optional_components=' + optional_components + '}');
+				var event_packet = new EventPacket(event_id, optional_components);
+				trace('Could not dispatch ' + event_packet);
 				null_events.push(event_id);
 		}
 	}
