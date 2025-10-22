@@ -1,5 +1,7 @@
 package sphis.hianod.scripts;
 
+import sphis.hianod.events_packets.EventPacket;
+
 class Script
 {
 	public var id:String;
@@ -8,4 +10,6 @@ class Script
 	{
 		this.id = id;
 	}
+
+	public function receiveEventPacket(event_pack:EventPacket) {}
 }
