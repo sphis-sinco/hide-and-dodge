@@ -6,7 +6,10 @@ class ScriptHandler
 {
 	public static var scripts:Array<Script> = [];
 
-	public static function clearScripts() {}
+	public static function clearScripts()
+	{
+		scripts = [];
+	}
 
 	public static function loadScripts()
 	{
