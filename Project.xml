@@ -33,9 +33,9 @@
 	<set name="BUILD_DIR" value="export/debug" if="debug"/>
 
 	<source path="source" />
-	
+
 	<assets path="assets" />
-	<assets path="modpacks" />
+	<assets path="modpacks" unless="REDIRECT_MODS"/>
 
 	<!-- _______________________________ Libraries ______________________________ -->
 

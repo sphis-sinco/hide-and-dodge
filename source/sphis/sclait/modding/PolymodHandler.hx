@@ -51,7 +51,8 @@ class PolymodHandler
 	public static function loadMods(dirs:Array<String>)
 	{
 		Polymod.init({
-			modRoot: 'modpacks/',
+			modRoot: #if REDIRECT_MODS '../../../../' + #end
+			'modpacks/',
 			dirs: dirs,
 			errorCallback: onError,
 			ignoredFiles: buildIgnoreList(),
@@ -73,7 +74,8 @@ class PolymodHandler
 	{
 		polymod.Polymod.onError = onError;
 		return new ZipFileSystem({
-			modRoot: 'modpacks/',
+			modRoot: #if REDIRECT_MODS '../../../../' + #end
+			'modpacks/',
 			autoScan: true
 		});
 	}
