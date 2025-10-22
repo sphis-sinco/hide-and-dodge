@@ -23,14 +23,20 @@ class PlayState extends FlxState
 		super.update(elapsed);
 	}
 
+	public var null_events:Array<String> = [];
+
 	public function dispatchEvent(event_id:String)
 	{
+		if (null_events.contains(event_id))
+			return;
+
 		trace('Dispatching event: ' + event_id);
 
 		switch (event_id)
 		{
 			default:
 				trace('Could not dispatch event: ' + event_id);
+				null_events.push(event_id);
 		}
 	}
 }
