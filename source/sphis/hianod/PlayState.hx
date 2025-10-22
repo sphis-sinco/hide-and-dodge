@@ -81,13 +81,8 @@ class PlayState extends FlxState
 		dispatchEvent('post_update', {elapsed: elapsed});
 	}
 
-	public var null_events:Array<String> = [];
-
-	public function dispatchEvent(event_id:String, ?optional_components:Dynamic)
+	public function dispatchEvent(event_id:String, ?components:Dynamic)
 	{
-		if (null_events.contains(event_id))
-			return;
-
 		switch (event_id)
 		{
 			case 'time_decrease':
@@ -95,9 +90,7 @@ class PlayState extends FlxState
 				trace(event_packet);
 
 			default:
-				var event_packet = new EventPacket(event_id, optional_components);
-				trace('Could not dispatch ' + event_packet);
-				null_events.push(event_id);
+				var event_packet = new EventPacket(event_id, components);
 		}
 	}
 }
