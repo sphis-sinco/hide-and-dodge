@@ -1,5 +1,7 @@
 package sphis.hianod.events_packets;
 
+using StringTools;
+
 class EventPacket
 {
 	public var id:String;
@@ -13,6 +15,6 @@ class EventPacket
 
 	public function toString()
 	{
-		return 'event_packet={id=' + id + ', data=' + data + '}';
+		return 'event_packet={id=' + id + ', data=' + Std.string(data).replace(' : ', '=') + '}';
 	}
 }
