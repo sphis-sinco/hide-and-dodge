@@ -21,6 +21,7 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
+		dispatchEvent('pre_create');
 		super.create();
 
 		time_left = time_starting_value;
@@ -57,16 +58,20 @@ class PlayState extends FlxState
 		add(environment_rock_one);
 		add(environment_rock_two);
 		add(environment_rock_three);
+
+		dispatchEvent('post_create');
 	}
 
 	override public function update(elapsed:Float)
 	{
+		dispatchEvent('pre_update', {elapsed: elapsed});
 		super.update(elapsed);
+		dispatchEvent('post_update', {elapsed: elapsed});
 	}
 
 	public var null_events:Array<String> = [];
 
-	public function dispatchEvent(event_id:String)
+	public function dispatchEvent(event_id:String, ?optional_data:Dynamic)
 	{
 		if (null_events.contains(event_id))
 			return;
@@ -78,7 +83,7 @@ class PlayState extends FlxState
 				trace(event_data);
 
 			default:
-				trace('Could not dispatch event: ' + event_id);
+				trace('Could not dispatch event={id=' + event_id + ', optional_data=' + optional_data + '}');
 				null_events.push(event_id);
 		}
 	}
