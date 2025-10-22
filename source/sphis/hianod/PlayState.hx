@@ -2,6 +2,7 @@ package sphis.hianod;
 
 import flixel.FlxState;
 import flixel.util.FlxTimer;
+import sphis.hianod.events_packets.TimeDecreaseEventPacket;
 
 class PlayState extends FlxState
 {
@@ -35,10 +36,7 @@ class PlayState extends FlxState
 		switch (event_id)
 		{
 			case 'time_decrease':
-				var event_data = {
-					time_starting_value: this.time_starting_value,
-					time_left: this.time_left
-				};
+				var event_data = new TimeDecreaseEventPacket(this.time_starting_value, this.time_left);
 				trace(event_data);
 
 			default:
