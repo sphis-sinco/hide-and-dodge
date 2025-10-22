@@ -6,7 +6,7 @@ class GameInfo
 {
 	public static var game_version:Version = new Version(0, 1);
 
-	public static var modpack_api_version:Version = new Version(1, 0, 0);
+	public static var modpack_api_version:Version = new Version(1, 0);
 	public static var modpack_api_rule(get, never):String;
 
 	static function get_modpack_api_rule():String
