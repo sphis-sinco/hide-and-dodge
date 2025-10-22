@@ -19,6 +19,15 @@ class Version
 		return major + '.' + minor + '.' + patch;
 	}
 
+	public function fromVersion(version:Version, ?offsets:Array<Int>):Version
+	{
+		final major_offset:Int = offsets[0] ?? 0;
+		final minor_offset:Int = offsets[1] ?? 0;
+		final patch_offset:Int = offsets[2] ?? 0;
+
+		return new Version(version.major - major_offset, version.minor - minor_offset, version.patch - patch_offset);
+	}
+
 	public var major(get, set):Int;
 
 	function get_major():Int
