@@ -82,7 +82,7 @@ class PlayState extends FlxState
 
 	public var null_events:Array<String> = [];
 
-	public function dispatchEvent(event_id:String, ?optional_data:Dynamic)
+	public function dispatchEvent(event_id:String, ?optional_components:Dynamic)
 	{
 		if (null_events.contains(event_id))
 			return;
@@ -94,7 +94,7 @@ class PlayState extends FlxState
 				trace(event_data);
 
 			default:
-				trace('Could not dispatch event={id=' + event_id + ', optional_data=' + optional_data + '}');
+				trace('Could not dispatch event={id=' + event_id + ', optional_components=' + optional_components + '}');
 				null_events.push(event_id);
 		}
 	}

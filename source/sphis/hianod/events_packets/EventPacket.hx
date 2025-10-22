@@ -5,17 +5,17 @@ using StringTools;
 class EventPacket
 {
 	public var id:String;
-	public var data:Dynamic;
+	public var components:Dynamic;
 
-	public function new(id:String, data:Dynamic)
+	public function new(id:String, components:Dynamic)
 	{
 		this.id = id;
-		this.data = data;
+		this.components = components;
 	}
 
 	public function toString()
 	{
-		var event_packet = 'event_packet={id=' + id + ', data=' + data + '}';
+		var event_packet = 'event_packet={id=' + id + ', components=' + components + '}';
 		return event_packet.replace(' : ', '=');
 	}
 }
