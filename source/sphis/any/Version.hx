@@ -4,9 +4,9 @@ class Version
 {
 	public var version:Array<Null<Int>> = [0, 0, 0];
 
-	public function new(major:Int, ?minor:Null<Int>, ?patch:Null<Int>)
+	public function new(major:Null<Int>, ?minor:Null<Int>, ?patch:Null<Int>)
 	{
-		this.version = [major];
+		this.version = [major ?? 0];
 
 		if (minor != null)
 			this.version.push(minor);
