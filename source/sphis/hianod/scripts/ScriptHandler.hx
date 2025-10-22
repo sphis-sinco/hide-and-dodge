@@ -13,5 +13,9 @@ class ScriptHandler
 		clearScripts();
 	}
 
-	public static function sendEventPacket(event_packet:EventPacket) {}
+	public static function sendEventPacket(event_packet:EventPacket)
+	{
+		for (script in scripts)
+			script.receiveEventPacket(event_packet);
+	}
 }
