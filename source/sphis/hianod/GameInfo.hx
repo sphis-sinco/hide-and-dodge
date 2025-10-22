@@ -14,6 +14,6 @@ class GameInfo
 		final min_modpack_api_version = new Version().fromVersion(modpack_api_version, [1, 0, 0]).toString();
 		final max_modpack_api_version = new Version().fromVersion(modpack_api_version, [-1, 0, 0]).toString();
 
-		return min_modpack_api_version + '>= <=' + max_modpack_api_version;
+		return '>=' + min_modpack_api_version + ' <' + max_modpack_api_version;
 	}
 }
