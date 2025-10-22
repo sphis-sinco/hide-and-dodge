@@ -8,7 +8,10 @@ class ScriptHandler
 
 	public static function clearScripts() {}
 
-	public static function loadScripts() {}
+	public static function loadScripts()
+	{
+		clearScripts();
+	}
 
 	public static function sendEventPacket(event_packet:EventPacket) {}
 }
