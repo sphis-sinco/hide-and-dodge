@@ -29,6 +29,9 @@ class PlayState extends FlxState
 		{
 			time_left -= 1;
 			dispatchEvent('time_decrease');
+
+			if (time_left < 1)
+				dispatchEvent('time_complete');
 		}, time_starting_value);
 
 		environment_background = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.GRAY);
