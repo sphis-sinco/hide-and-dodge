@@ -6,14 +6,14 @@ class GameInfo
 {
 	public static var game_version:Version = new Version(0, 1);
 
-	public static var mod_api_version:Version = new Version(1, 0, 0);
-	public static var mod_api_rule(get, never):String;
+	public static var modpack_api_version:Version = new Version(1, 0, 0);
+	public static var modpack_api_rule(get, never):String;
 
-	static function get_mod_api_rule():String
+	static function get_modpack_api_rule():String
 	{
-		final min_mod_api_version = new Version().fromVersion(mod_api_version, [1, 0, 0]).toString();
-		final max_mod_api_version = new Version().fromVersion(mod_api_version, [-1, 0, 0]).toString();
+		final min_modpack_api_version = new Version().fromVersion(modpack_api_version, [1, 0, 0]).toString();
+		final max_modpack_api_version = new Version().fromVersion(modpack_api_version, [-1, 0, 0]).toString();
 
-		return min_mod_api_version + '>= <=' + max_mod_api_version;
+		return min_modpack_api_version + '>= <=' + max_modpack_api_version;
 	}
 }
