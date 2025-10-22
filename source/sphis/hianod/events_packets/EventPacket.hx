@@ -15,6 +15,7 @@ class EventPacket
 
 	public function toString()
 	{
-		return 'event_packet={id=' + id + ', data=' + Std.string(data).replace(' : ', '=') + '}';
+		var event_packet = 'event_packet={id=' + id + ', data=' + data + '}';
+		return event_packet.replace(' : ', '=');
 	}
 }
