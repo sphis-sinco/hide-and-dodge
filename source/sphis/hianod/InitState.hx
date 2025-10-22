@@ -15,6 +15,8 @@ class InitState extends FlxState
 		ConsoleUtil.registerObject('GameInfo', GameInfo);
 		ConsoleUtil.registerObject('ScriptHandler', ScriptHandler);
 
+		ConsoleUtil.registerObject('PolymodHandler', PolymodHandler);
+
 		PolymodHandler.forceReloadAssets();
 
 		FlxG.switchState(() -> new PlayState());
