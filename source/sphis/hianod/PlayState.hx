@@ -30,8 +30,6 @@ class PlayState extends FlxState
 		if (null_events.contains(event_id))
 			return;
 
-		trace('Dispatching event: ' + event_id);
-
 		switch (event_id)
 		{
 			default:
