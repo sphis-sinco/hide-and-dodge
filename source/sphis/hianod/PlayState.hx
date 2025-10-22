@@ -19,6 +19,9 @@ class PlayState extends FlxState
 	public var environment_rock_two:FlxSprite;
 	public var environment_rock_three:FlxSprite;
 
+	public var player_character:FlxSprite;
+	public var player_position_index:Int = 0;
+
 	override public function create()
 	{
 		dispatchEvent('pre_create');
@@ -61,6 +64,11 @@ class PlayState extends FlxState
 		add(environment_rock_one);
 		add(environment_rock_two);
 		add(environment_rock_three);
+
+		player_character = new FlxSprite().makeGraphic(48, 48, FlxColor.RED);
+		player_character.screenCenter();
+		player_character.y += player_character.height * 2;
+		add(player_character);
 
 		dispatchEvent('post_create');
 	}
