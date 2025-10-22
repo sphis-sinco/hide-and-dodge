@@ -62,6 +62,11 @@ class PolymodHandler
 			parseRules: buildParseRules(),
 			customFilesystem: modFileSystem,
 			apiVersionRule: GameInfo.modpack_api_rule,
+			frameworkParams: {
+				assetLibraryPaths: [],
+				coreAssetRedirect: #if REDIRECT_MODS '../../../../' + #end
+				'assets/',
+			},
 		});
 	}
 
