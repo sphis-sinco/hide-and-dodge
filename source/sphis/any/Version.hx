@@ -14,6 +14,11 @@ class Version
 			this.version.push(patch);
 	}
 
+	public function toString():String
+	{
+		return major + '.' + minor + '.' + patch;
+	}
+
 	public var major(get, set):Int;
 
 	function get_major():Int
